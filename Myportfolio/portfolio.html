@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - StockTrader</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo">StockTrader</div>
+            <input type="text" id="stockSearch" placeholder="Search stocks...">
+        </div>
+        <div class="header-right">
+            <button id="loginBtn">Login</button>
+            <div class="user-profile">
+                <img src="../profile.png" alt="Profile" class="profile-img">
+                <span class="username">Guest</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Dashboard</a></li>
+                    <li><a href="#" class="active">Portfolio</a></li>
+                    <li><a href="../Setting/setting.html">Settings</a></li>
+                    <li><a href="../help/help.html">Help</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="portfolio-container">
+            <div class="portfolio-header">
+                <h1>My Portfolio</h1>
+                <div class="portfolio-stats">
+                    <div class="stat-card">
+                        <h3>Total Value</h3>
+                        <p class="value">$25,650.75</p>
+                        <span class="change positive">+2.4%</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Today's Gain/Loss</h3>
+                        <p class="value">+$450.25</p>
+                        <span class="change positive">+1.8%</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Positions</h3>
+                        <p class="value">12</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-content">
+                <div class="holdings-section">
+                    <h2>Holdings</h2>
+                    <table class="holdings-table">
+                        <thead>
+                            <tr>
+                                <th>Stock</th>
+                                <th>Shares</th>
+                                <th>Avg Price</th>
+                                <th>Current Price</th>
+                                <th>Market Value</th>
+                                <th>Total Return</th>
+                            </tr>
+                        </thead>
+                        <tbody id="holdingsTableBody">
+                            <!-- Holdings will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="performance-section">
+                    <h2>Portfolio Performance</h2>
+                    <div class="chart-container">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="portfolio.js"></script>
+</body>
+</html>

@@ -1,241 +1,84 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fake trade</title>
-    <link rel="stylesheet" href="front_page.css">
-    <link rel="stylesheet" href="chart-styles.css">
+    <title>Stock Trading Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta name="color-schema" content="dark">
 </head>
 <body>
     <header>
         <div class="header-left">
-            <div class="header-title">Fake Trade</div>
-            <input type="text" class="search-bar" placeholder="Search...">
+            <div class="logo">StockTrader</div>
+            <input type="text" id="stockSearch" placeholder="Search stocks...">
         </div>
         <div class="header-right">
-            <button class="login-btn">
-                Login / SignUp
-            </button>
-            <img src="guest.png" alt="profile png" class="profile-img">
-            <div class="account-menu">
-                <button class="account-btn">Guest</button>
-                <div class="dropdown-content">
-                    <a href="#">Profile</a>
-                    <a class="logout-btn">Logout</a>
-                </div>
+            <button id="loginBtn">Login</button>
+            <div class="user-profile">
+                <img src="profile.png" alt="Profile" class="profile-img">
+                <span class="username">Guest</span>
             </div>
         </div>
     </header>
-    
-    <div class="main-cont">
-        
-        <nav class="side-menu" id="sideMenu">
-            <ul>
-                <li><a href="#">My Portfolio</a></li>
-                <li><a href="#">Watchlist</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
-        </nav>
-        
-        <section class="top-stocks">
-            <h2>Top Stocks Today</h2>
-            <!-- Updates to the stocks-carousel section in front_page.html -->
-            <div class="stocks-carousel">
-                <div class="stock-card">
-                    <div class="stock-header">
-                        <span class="ticker">RELIANCE</span>
-                        <span class="exchange">NSE</span>
-                    </div>
-                    <div class="price-info">
-                        <span class="price">₹2,500</span>
-                        <span class="change up">+1.5%</span>
-                    </div>
-                    <div class="stock-mini-chart">
-                        <div class="chart-container"></div>
-                    </div>
-                </div>
 
-                <div class="stock-card">
-                    <div class="stock-header">
-                        <span class="ticker">TCS</span>
-                        <span class="exchange">NSE</span>
-                    </div>
-                    <div class="price-info">
-                        <span class="price">₹3,800</span>
-                        <span class="change down">-0.8%</span>
-                    </div>
-                    <div class="stock-mini-chart">
-                        <div class="chart-container"></div>
-                    </div>
-                </div>
+    <main class="container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Dashboard</a></li>
+                    <li><a href="./Myportfolio/portfolio.html">Portfolio</a></li>
+                    <li><a href="./Setting/setting.html">Settings</a></li>
+                    <li><a href="./help/help.html">Help</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-                <div class="stock-card">
-                    <div class="stock-header">
-                        <span class="ticker">INFY</span>
-                        <span class="exchange">NSE</span>
-                    </div>
-                    <div class="price-info">
-                        <span class="price">₹1,600</span>
-                        <span class="change up">+2.1%</span>
-                    </div>
-                    <div class="stock-mini-chart">
-                        <div class="chart-container"></div>
-                    </div>
+        <section class="main-content">
+            <div class="market-overview">
+                <h2>Market Overview</h2>
+                <div class="stock-grid">
+                    <!-- Real-time stock cards will be inserted here -->
                 </div>
+            </div>
 
-                <div class="stock-card">
-                    <div class="stock-header">
-                        <span class="ticker">HDFC</span>
-                        <span class="exchange">NSE</span>
+            <div class="portfolio-section">
+                <h2>Your Portfolio</h2>
+                <div class="portfolio-summary">
+                    <div class="total-value">
+                        <h3>Total Value</h3>
+                        <span class="amount">$0.00</span>
                     </div>
-                    <div class="price-info">
-                        <span class="price">₹2,100</span>
-                        <span class="change up">+0.5%</span>
-                    </div>
-                    <div class="stock-mini-chart">
-                        <div class="chart-container"></div>
-                    </div>
-                </div>
-                <div class="stock-card">
-                    <div class="stock-header">
-                        <span class="ticker">INFY</span>
-                        <span class="exchange">NSE</span>
-                    </div>
-                    <div class="price-info">
-                        <span class="price">₹1,600</span>
-                        <span class="change up">+2.1%</span>
-                    </div>
-                    <div class="stock-mini-chart">
-                        <div class="chart-container"></div>
+                    <div class="daily-change">
+                        <h3>Today's Change</h3>
+                        <span class="change-amount">+$0.00 (0.00%)</span>
                     </div>
                 </div>
-
-                <div class="stock-card">
-                    <div class="stock-header">
-                        <span class="ticker">HDFC</span>
-                        <span class="exchange">NSE</span>
-                    </div>
-                    <div class="price-info">
-                        <span class="price">₹2,100</span>
-                        <span class="change up">+0.5%</span>
-                    </div>
-                    <div class="stock-mini-chart">
-                        <div class="chart-container"></div>
-                    </div>
-                </div><div class="stock-card">
-                    <div class="stock-header">
-                        <span class="ticker">INFY</span>
-                        <span class="exchange">NSE</span>
-                    </div>
-                    <div class="price-info">
-                        <span class="price">₹1,600</span>
-                        <span class="change up">+2.1%</span>
-                    </div>
-                    <div class="stock-mini-chart">
-                        <div class="chart-container"></div>
-                    </div>
-                </div>
-
-                <div class="stock-card">
-                    <div class="stock-header">
-                        <span class="ticker">HDFC</span>
-                        <span class="exchange">NSE</span>
-                    </div>
-                    <div class="price-info">
-                        <span class="price">₹2,100</span>
-                        <span class="change up">+0.5%</span>
-                    </div>
-                    <div class="stock-mini-chart">
-                        <div class="chart-container"></div>
-                    </div>
-                </div><div class="stock-card">
-                    <div class="stock-header">
-                        <span class="ticker">INFY</span>
-                        <span class="exchange">NSE</span>
-                    </div>
-                    <div class="price-info">
-                        <span class="price">₹1,600</span>
-                        <span class="change up">+2.1%</span>
-                    </div>
-                    <div class="stock-mini-chart">
-                        <div class="chart-container"></div>
-                    </div>
-                </div>
-
-                <div class="stock-card">
-                    <div class="stock-header">
-                        <span class="ticker">HDFC</span>
-                        <span class="exchange">NSE</span>
-                    </div>
-                    <div class="price-info">
-                        <span class="price">₹2,100</span>
-                        <span class="change up">+0.5%</span>
-                    </div>
-                    <div class="stock-mini-chart">
-                        <div class="chart-container"></div>
-                    </div>
-                </div><div class="stock-card">
-                    <div class="stock-header">
-                        <span class="ticker">INFY</span>
-                        <span class="exchange">NSE</span>
-                    </div>
-                    <div class="price-info">
-                        <span class="price">₹1,600</span>
-                        <span class="change up">+2.1%</span>
-                    </div>
-                    <div class="stock-mini-chart">
-                        <div class="chart-container"></div>
-                    </div>
-                </div>
-
-                <div class="stock-card">
-                    <div class="stock-header">
-                        <span class="ticker">HDFC</span>
-                        <span class="exchange">NSE</span>
-                    </div>
-                    <div class="price-info">
-                        <span class="price">₹2,100</span>
-                        <span class="change up">+0.5%</span>
-                    </div>
-                    <div class="stock-mini-chart">
-                        <div class="chart-container"></div>
-                    </div>
+                <div class="portfolio-holdings">
+                    <!-- Portfolio stocks will be listed here -->
                 </div>
             </div>
         </section>
-    
-        <aside class="stock-details-sidebar">
-            <button class="close-btn">Close</button>
-            <h2>Stock Details</h2>
-            <div class="stock-detail-chart">
-                <div class="chart-container">
-                    <!-- Detailed chart will be rendered here -->
+
+        <aside class="right-sidebar">
+            <div class="watchlist">
+                <h2>Watchlist</h2>
+                <div class="watchlist-items">
+                    <!-- Watchlist stocks will be listed here -->
                 </div>
             </div>
-            <div class="stock-info">
-                <div class="info-row">
-                    <span class="label">Open</span>
-                    <span class="value">₹2,485</span>
+            <div class="stock-details">
+                <h2>Stock Details</h2>
+                <div class="chart-container">
+                    <canvas id="stockChart"></canvas>
                 </div>
-                <div class="info-row">
-                    <span class="label">High</span>
-                    <span class="value">₹2,540</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Low</span>
-                    <span class="value">₹2,475</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Volume</span>
-                    <span class="value">1.2M</span>
+                <div class="stock-info">
+                    <!-- Stock details will be shown here -->
                 </div>
             </div>
         </aside>
-    </div>
-      
+    </main>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script type="module" src="front_page.js"></script>
 </html>
